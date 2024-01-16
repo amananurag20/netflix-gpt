@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Signup from './Signup'
 import Browse from './Browse'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, useNavigate } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 
 const Body = () => {
-    const appRouter= createBrowserRouter([
-        {
-            path:"/" ,
-            element:<Signup/>,
-        },
-        {
-            path:"/browse" ,
-            element:<Browse/>
-        }
-    ])
-    return (
+
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Signup />,
+    },
+    {
+      path: "/browse",
+      element: <Browse />
+    }
+  ]); 
+
+
+  return (
     <div>
-          <RouterProvider router={appRouter}/>
+      <RouterProvider router={appRouter} />
     </div>
 
-    )
-
+  )
 
 }
 
